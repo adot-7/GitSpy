@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mb-4">    
+  <figure class="text-center">
+    <blockquote class="blockquote">
+      <br>
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="{{ user_data.avatar_url }}" class="rounded-circle img-fluid" alt="avatar" style="width: 30%; margin-right: 15px;">
+        
+      </div>
+    </blockquote>
+    <h2>{{ user_data.name }}</h2> <!-- Using h2 for name for better semantics -->
+    <figcaption class="blockquote-footer">
+      Been a user since <cite title="Source Title">{{ user_data.created_at|date:"F, Y" }}</cite>
+    </figcaption>
+    <a class="navbar-brand mx-auto" href="{{ user_data.html_url }}" style="width:50px;">
+      <img src="https://cdn-icons-png.freepik.com/512/919/919847.png" alt="Home" width="50" height="50" class="d-flex-block align-text-top">
+    </a>
+  </figure>
+</div>  
+
+<div class="container mt-4"> <!-- Added mt-4 for top margin -->
+  <h1 class="text-center">The User's Top 5 Repositories</h1>
+  <br>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class=" table-dark">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Link</th>
+          <th>Last Updated</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for repo in repos_data %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ repo.name }}</td>
+          <td><a href="{{ repo.html_url }}" style="text-decoration: none;">🔗</a></td>
+          <td>{{ repo.updated_at|date:"F d, Y" }}</td>
+          <td>{{ repo.description }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock content %}

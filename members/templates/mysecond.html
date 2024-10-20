@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+  
+<div class="container-fluid">   
+    <figure class="text-center">
+      <blockquote class="blockquote typing-container">
+        <br>
+        <h1 style="letter-spacing: 6px;"><big style="font-size: 72px; font-weight: bold; color: #333;">GitSpy.</big></h1>
+      </blockquote><br>
+      <!-- <div class="container typing-container">
+        <p class="typing-text">Track GitHub Profiles Effortlessly</p>
+      </div> -->
+      <figcaption class="blockquote-footer" style="letter-spacing: 0.5px;">
+        Made By <cite title="Source Title" >Akash,USICT CSE'28</cite>
+      </figcaption>
+    </figure>
+</div>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 45vh;">
+    <form method="GET" class="text-center">
+        <div class="mb-3">
+            <input type="text" name="username" class="form-control" placeholder="Enter GitHub username" required style="max-width: 400px; margin: 0 auto; border-radius: 50px; padding: 0.75rem 1rem; border: 2px solid rgb(35, 13, 13);">
+        </div>
+        <button type="submit" class="btn btn-outline-secondary" style="padding: 0.75rem 2rem; border-radius: 50px; border: 2px solid rgb(35, 13, 13); background-color: white;">Search</button>
+    </form>
+</div>
+
+<style>
+    .typing-container {
+        font-family: monospace;
+        overflow: hidden;
+         /* Cursor color */
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 0.15em;
+        animation: typing 6s steps(150, end), blink-caret 0.75s step-end infinite;
+        width: 100%;
+        max-width: 100%; /* Maximum width for mobile devices */
+    }
+
+    /* Typing animation keyframes */
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #333; }
+    }
+
+    @media (max-width: 576px) {
+        .typing-text {
+            font-size: 1rem; /* Smaller font on mobile */
+        }
+
+        h1 {
+            font-size: 36px; /* Smaller title */
+        }
+
+        .typing-container {
+            animation-duration: 2s; /* Speed up animation on mobile */
+        }
+    }
+
+    .typing-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #555;
+        display: inline-block;
+    }
+</style>
+
+{% endblock content %}

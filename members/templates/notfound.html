@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    Blehh, User not found or you simply testing what this app does when you give it such an input, touch grass.
+    <a href="{% url "members:members" %}"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></a>
+</div>
+{% endblock content %}
