@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'GitSpy.wsgi.application'
+WSGI_APPLICATION = 'GitSpy.wsgi.app'
 
 
 # Database
