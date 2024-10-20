@@ -9,7 +9,7 @@ def members(request):
         #Lets get the username first, makes it easier to work with
         username = request.GET.get("username") #Here since the dictionary has a key value pair with username as one and only key, we simply use get(key), we can choose to not use it but it gives None instead of error if the key doesnt exist for some reason
 
-        if len(username)>0:
+        if username is not None and len(username)>0:
             url_to_api = f"https://api.github.com/users/{username}"
             username_response = requests.get(url_to_api)
 
